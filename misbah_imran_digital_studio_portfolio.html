@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misbah Imran Digital Studio | Your Digital Partner</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            950: '#030712',
+                            900: '#05050a',
+                            800: '#0a1128',
+                            700: '#101c42',
+                            600: '#1a2b5c'
+                        },
+                        electric: {
+                            DEFAULT: '#00d2ff',
+                            glow: '#00d2ff80'
+                        },
+                        gold: {
+                            DEFAULT: '#d4af37',
+                            light: '#f3e5ab',
+                            dark: '#aa820a',
+                            glow: '#d4af3780'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 2s infinite',
+                        'spin-slow': 'spin 12s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' }
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '0.6', filter: 'drop-shadow(0 0 15px rgba(0,210,255,0.6))' },
+                            '50%': { opacity: '1', filter: 'drop-shadow(0 0 25px rgba(212,175,55,0.8))' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Utilities & Glassmorphism */
+        body {
+            background-color: #05050a;
+            color: #f3f4f6;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(10, 17, 40, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card-gold {
+            background: rgba(10, 17, 40, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+        }
+        .glass-card-electric {
+            background: rgba(10, 17, 40, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 210, 255, 0.25);
+        }
+        .text-gradient-electric {
+            background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #ffe066 0%, #d4af37 50%, #aa820a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-gradient-gold-btn {
+            background: linear-gradient(135deg, #d4af37 0%, #b8921e 100%);
+        }
+        .bg-gradient-electric-btn {
+            background: linear-gradient(135deg, #00d2ff 0%, #0088ff 100%);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #05050a;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #1a2b5c;
+            border-radius: 9999px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #00d2ff;
+        }
+        /* Grid Background Pattern */
+        .grid-bg {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="relative custom-scrollbar">
+
+    <!-- Ambient Glowing Orbs Background -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-electric/20 rounded-full blur-[120px]"></div>
+        <div class="absolute top-1/3 -right-40 w-96 h-96 bg-gold/15 rounded-full blur-[140px]"></div>
+        <div class="absolute -bottom-40 left-1/3 w-96 h-96 bg-navy-700/40 rounded-full blur-[100px]"></div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 py-4 px-4 sm:px-8">
+        <div class="max-w-7xl mx-auto flex items-center justify-between glass-card rounded-2xl px-5 py-3 border border-white/10 shadow-2xl">
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-electric via-navy-800 to-gold p-[2px] shadow-lg shadow-electric/20 group-hover:scale-105 transition-transform">
+                    <div class="w-full h-full bg-navy-900 rounded-[10px] flex items-center justify-center font-heading font-black text-electric group-hover:text-gold transition-colors">
+                        MI
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-heading font-extrabold text-lg tracking-tight text-white flex items-center gap-1.5">
+                        Misbah Imran <span class="text-xs px-2 py-0.5 rounded-full bg-gold/20 text-gold border border-gold/30 font-sans font-semibold">STUDIO</span>
+                    </span>
+                    <span class="text-[10px] font-medium tracking-widest text-electric uppercase">Your Digital Partner</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#home" class="text-white hover:text-electric transition-colors">Home</a>
+                <a href="#about" class="text-gray-300 hover:text-electric transition-colors">About</a>
+                <a href="#services" class="text-gray-300 hover:text-electric transition-colors">Services</a>
+                <a href="#portfolio" class="text-gray-300 hover:text-electric transition-colors">Portfolio</a>
+                <a href="#contact" class="text-gray-300 hover:text-electric transition-colors">Contact</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden sm:flex items-center gap-3">
+                <a href="#contact" class="px-5 py-2.5 rounded-xl font-semibold text-xs uppercase tracking-wider bg-gradient-gold-btn text-navy-950 hover:shadow-lg hover:shadow-gold/30 hover:scale-105 transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-paper-plane"></i> Get Started
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white text-2xl focus:outline-none" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden max-w-7xl mx-auto mt-2 glass-card rounded-2xl p-5 border border-white/10 shadow-2xl flex flex-col gap-4">
+            <a href="#home" class="mobile-link text-white font-medium py-2 border-b border-white/5">Home</a>
+            <a href="#about" class="mobile-link text-gray-300 font-medium py-2 border-b border-white/5">About Us</a>
+            <a href="#services" class="mobile-link text-gray-300 font-medium py-2 border-b border-white/5">Services</a>
+            <a href="#portfolio" class="mobile-link text-gray-300 font-medium py-2 border-b border-white/5">Portfolio</a>
+            <a href="#contact" class="mobile-link text-gray-300 font-medium py-2 border-b border-white/5">Contact</a>
+            <a href="#contact" class="mobile-link mt-2 text-center py-3 rounded-xl font-semibold text-xs uppercase tracking-wider bg-gradient-gold-btn text-navy-950">
+                Get Started Now
+            </a>
+        </div>
+    </header>
+
+    <main class="relative z-10">
+
+        <!-- 1. HERO SECTION -->
+        <section id="home" class="min-h-screen pt-32 pb-20 px-4 sm:px-8 grid-bg flex flex-col justify-center items-center relative">
+            <div class="max-w-5xl mx-auto text-center space-y-8">
+                
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card-gold text-gold text-xs sm:text-sm font-semibold tracking-wide animate-pulse-glow">
+                    <i class="fa-solid fa-gem text-electric"></i> Premium Full-Stack & AI Solutions
+                </div>
+
+                <!-- Main Title -->
+                <h1 class="font-heading font-black text-4xl sm:text-6xl md:text-7xl tracking-tight text-white leading-tight">
+                    Transforming Visions Into <br class="hidden sm:inline">
+                    <span class="text-gradient-electric">Digital Masterpieces</span> & 
+                    <span class="text-gradient-gold">AI Systems</span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="max-w-2xl mx-auto text-gray-300 text-base sm:text-lg md:text-xl font-normal leading-relaxed">
+                    At <span class="text-white font-semibold">Misbah Imran Digital Studio</span>, we engineer high-impact Web Apps, Mobile Apps, Graphic Identities, and Advanced Python AI Solutions.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+                    <a href="#services" class="px-8 py-4 rounded-xl font-bold text-sm tracking-wide bg-gradient-electric-btn text-navy-950 hover:shadow-xl hover:shadow-electric/40 hover:-translate-y-1 transition-all flex items-center gap-3">
+                        <i class="fa-solid fa-rocket"></i> Explore Services
+                    </a>
+                    <a href="#portfolio" class="px-8 py-4 rounded-xl font-bold text-sm tracking-wide glass-card hover:bg-white/10 text-white border border-white/20 hover:border-gold hover:-translate-y-1 transition-all flex items-center gap-3">
+                        <i class="fa-solid fa-layer-group text-gold"></i> Interactive Demos
+                    </a>
+                </div>
+
+                <!-- Agency Pillars -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-12 max-w-4xl mx-auto">
+                    <div class="glass-card p-5 rounded-2xl text-center border-t-2 border-t-electric/50 hover:border-electric transition-colors">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-white font-heading"><i class="fa-solid fa-code text-electric"></i></div>
+                        <p class="text-xs sm:text-sm text-electric font-medium mt-1">Clean Architecture</p>
+                    </div>
+                    <div class="glass-card p-5 rounded-2xl text-center border-t-2 border-t-gold/50 hover:border-gold transition-colors">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-white font-heading"><i class="fa-solid fa-wand-magic-sparkles text-gold"></i></div>
+                        <p class="text-xs sm:text-sm text-gold font-medium mt-1">Modern UI Design</p>
+                    </div>
+                    <div class="glass-card p-5 rounded-2xl text-center border-t-2 border-t-electric/50 hover:border-electric transition-colors">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-white font-heading"><i class="fa-solid fa-brain text-electric"></i></div>
+                        <p class="text-xs sm:text-sm text-electric font-medium mt-1">AI Automation</p>
+                    </div>
+                    <div class="glass-card p-5 rounded-2xl text-center border-t-2 border-t-gold/50 hover:border-gold transition-colors">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-white font-heading"><i class="fa-solid fa-handshake text-gold"></i></div>
+                        <p class="text-xs sm:text-sm text-gold font-medium mt-1">Client Centric</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 2. ABOUT US SECTION -->
+        <section id="about" class="py-24 px-4 sm:px-8 relative bg-navy-900/50">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <!-- Left: Agency Intro & Story -->
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md glass-card text-electric text-xs font-bold uppercase tracking-widest">
+                            <i class="fa-solid fa-shield-halved"></i> Who We Are
+                        </div>
+                        <h2 class="font-heading font-bold text-3xl sm:text-5xl text-white leading-tight">
+                            Driven by Innovation. <br>
+                            <span class="text-gradient-gold">Focused on Perfection.</span>
+                        </h2>
+                        <p class="text-gray-300 leading-relaxed text-base sm:text-lg">
+                            <strong class="text-white">Misbah Imran Digital Studio</strong> is a digital solutions agency. We build clean, responsive applications and AI implementations tailored to your exact project vision.
+                        </p>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Whether you need a web app, a custom mobile experience, Python AI scripts, or graphic design assets, our team delivers high-quality code and polished visuals.
+                        </p>
+
+                        <!-- Highlights Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+                            <div class="p-4 rounded-xl glass-card border border-white/5 flex flex-col gap-2">
+                                <i class="fa-solid fa-lightbulb text-gold text-2xl"></i>
+                                <h3 class="text-white font-semibold text-sm">Innovation First</h3>
+                                <p class="text-xs text-gray-400">Modern tech stack & modern frameworks.</p>
+                            </div>
+                            <div class="p-4 rounded-xl glass-card border border-white/5 flex flex-col gap-2">
+                                <i class="fa-solid fa-award text-electric text-2xl"></i>
+                                <h3 class="text-white font-semibold text-sm">Quality Focused</h3>
+                                <p class="text-xs text-gray-400">Thorough testing & clean interface designs.</p>
+                            </div>
+                            <div class="p-4 rounded-xl glass-card border border-white/5 flex flex-col gap-2">
+                                <i class="fa-solid fa-comments text-gold text-2xl"></i>
+                                <h3 class="text-white font-semibold text-sm">Direct Communication</h3>
+                                <p class="text-xs text-gray-400">Clear project tracking & prompt replies.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Visual Tech Card Showcase -->
+                    <div class="relative flex justify-center">
+                        <div class="w-full max-w-lg glass-card-electric rounded-3xl p-6 shadow-2xl relative overflow-hidden group">
+                            <!-- Background Accent Glowing Circle -->
+                            <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-gold/20 rounded-full blur-3xl group-hover:bg-electric/30 transition-all"></div>
+                            
+                            <div class="flex items-center justify-between pb-4 border-b border-white/10">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                </div>
+                                <span class="text-xs text-gray-400 font-mono">misbah-digital-core.py</span>
+                            </div>
+
+                            <div class="py-6 font-mono text-xs sm:text-sm space-y-3">
+                                <p class="text-purple-400"><span class="text-electric">class</span> <span class="text-gold">DigitalStudio</span>:</p>
+                                <p class="pl-4 text-gray-300">def __init__(self):</p>
+                                <p class="pl-8 text-gray-400">self.agency = <span class="text-green-400">"Misbah Imran Studio"</span></p>
+                                <p class="pl-8 text-gray-400">self.tagline = <span class="text-green-400">"Your Digital Partner"</span></p>
+                                <p class="pl-8 text-gray-400">self.services = [<span class="text-gold">"Mobile App"</span>, <span class="text-gold">"Website"</span>, <span class="text-gold">"Graphic Design"</span>, <span class="text-gold">"AI & Python"</span>]</p>
+                                
+                                <p class="pl-4 text-gray-300 pt-2">def deliver_value(self, project_requirements):</p>
+                                <p class="pl-8 text-electric">return <span class="text-white font-bold">OptimalSolution(project_requirements)</span></p>
+                            </div>
+
+                            <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                                <span class="text-xs text-gray-400"><i class="fa-solid fa-check-circle text-green-400 mr-1"></i> Ready For New Projects</span>
+                                <span class="text-xs font-bold text-gold">Misbah Imran Studio</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. SERVICES SECTION (4 MAIN CATEGORIES) -->
+        <section id="services" class="py-24 px-4 sm:px-8 relative">
+            <div class="max-w-7xl mx-auto space-y-16">
+                
+                <!-- Section Header -->
+                <div class="text-center space-y-4">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md glass-card-gold text-gold text-xs font-bold uppercase tracking-widest">
+                        <i class="fa-solid fa-cubes"></i> Core Services
+                    </div>
+                    <h2 class="font-heading font-black text-3xl sm:text-5xl text-white">
+                        Our Main <span class="text-gradient-electric">Service Categories</span>
+                    </h2>
+                    <p class="max-w-2xl mx-auto text-gray-400 text-sm sm:text-base">
+                        Explore our four primary service verticals. Click any category to view interactive project demos.
+                    </p>
+                </div>
+
+                <!-- 4 Service Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <!-- 1. Mobile App Development -->
+                    <div class="glass-card rounded-3xl p-8 hover:border-electric transition-all duration-300 group flex flex-col justify-between relative overflow-hidden">
+                        <div class="space-y-6">
+                            <div class="w-16 h-16 rounded-2xl bg-electric/10 border border-electric/30 flex items-center justify-center text-electric text-3xl group-hover:scale-110 group-hover:bg-electric group-hover:text-navy-950 transition-all">
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold font-heading text-white group-hover:text-electric transition-colors">1. Mobile App Development</h3>
+                                <p class="text-gray-300 text-sm mt-3 leading-relaxed">
+                                    Custom mobile apps built for Android and iOS using modern frameworks. Features include clean UI, offline storage, push alerts, and backend API integration.
+                                </p>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-gray-300">React Native</span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-gray-300">Flutter</span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-gray-300">iOS & Android</span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-gray-300">Firebase</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-8 mt-6 border-t border-white/10 flex items-center justify-between">
+                            <span class="text-xs text-gray-400 font-semibold">Cross-Platform Solutions</span>
+                            <button onclick="filterAndScrollPortfolio('app')" class="text-sm font-bold text-electric hover:text-white flex items-center gap-2 group-hover:translate-x-1 transition-all">
+                                View Mobile App Demos <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 2. Website Development -->
+                    <div class="glass-card rounded-3xl p-8 hover:border-gold transition-all duration-300 group flex flex-col justify-between relative overflow-hidden">
+                        <div class="space-y-6">
+                            <div class="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-3xl group-hover:scale-110 group-hover:bg-gold group-hover:text-navy-950 transition-all">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold font-heading text-white group-hover:text-gold transition-colors">2. Website Development</h3>
+                                <p class="text-gray-300 text-sm mt-3 leading-relaxed">
+                                    Responsive, fast-loading websites and web applications. Engineered using React, Next.js, HTML5, Tailwind CSS, and secure Node backend integrations.
+                                </p>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-gray-300">React.js</span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-gray-300">Next.js</span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-gray-300">Tailwind CSS</span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-gray-300">Node.js</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-8 mt-6 border-t border-white/10 flex items-center justify-between">
+                            <span class="text-xs text-gray-400 font-semibold">Fast & Responsive</span>
+                            <button onclick="filterAndScrollPortfolio('web')" class="text-sm font-bold text-gold hover:text-white flex items-center gap-2 group-hover:translate-x-1 transition-all">
+                                View Web Demos <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 3. Graphic Designing -->
+                    <div class="glass-card rounded-3xl p-8 hover:border-gold transition-all duration-300 group flex flex-col justify-between relative overflow-hidden">
+                        <div class="space-y-6">
+                            <div class="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-3xl group-hover:scale-110 group-hover:bg-gold group-hover:text-navy-950 transition-all">
+                                <i class="fa-solid fa-palette"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold font-heading text-white group-hover:text-gold transition-colors">3. Graphic Designing</h3>
+                                <p class="text-gray-300 text-sm mt-3 leading-relaxed">
+                                    Brand identities, logos, social media graphics, banners, and vector artwork crafted to give your business a professional visual presence.
+                                </p>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-gray-300">Brand Assets</span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-gray-300">Logos & Banners</span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-gray-300">UI/UX Layouts</span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-gray-300">Vector Art</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-8 mt-6 border-t border-white/10 flex items-center justify-between">
+                            <span class="text-xs text-gray-400 font-semibold">Visual Branding</span>
+                            <button onclick="filterAndScrollPortfolio('design')" class="text-sm font-bold text-gold hover:text-white flex items-center gap-2 group-hover:translate-x-1 transition-all">
+                                View Design Gallery <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 4. AI & Python Development -->
+                    <div class="glass-card rounded-3xl p-8 hover:border-electric transition-all duration-300 group flex flex-col justify-between relative overflow-hidden">
+                        <div class="space-y-6">
+                            <div class="w-16 h-16 rounded-2xl bg-electric/10 border border-electric/30 flex items-center justify-center text-electric text-3xl group-hover:scale-110 group-hover:bg-electric group-hover:text-navy-950 transition-all">
+                                <i class="fa-solid fa-brain"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold font-heading text-white group-hover:text-electric transition-colors">4. AI & Python Development</h3>
+                                <p class="text-gray-300 text-sm mt-3 leading-relaxed">
+                                    Python automation scripts, AI API integrations (OpenAI/Claude), automated web scrapers, data processing tools, and custom chatbot implementations.
+                                </p>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-gray-300">Python 3</span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-gray-300">OpenAI API</span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-gray-300">Web Automation</span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-gray-300">FastAPI</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-8 mt-6 border-t border-white/10 flex items-center justify-between">
+                            <span class="text-xs text-gray-400 font-semibold">Smart Automations</span>
+                            <button onclick="filterAndScrollPortfolio('ai')" class="text-sm font-bold text-electric hover:text-white flex items-center gap-2 group-hover:translate-x-1 transition-all">
+                                View AI Demos <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. PORTFOLIO SECTION -->
+        <section id="portfolio" class="py-24 px-4 sm:px-8 relative bg-navy-900/40">
+            <div class="max-w-7xl mx-auto space-y-12">
+                
+                <!-- Section Header -->
+                <div class="text-center space-y-4">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md glass-card text-electric text-xs font-bold uppercase tracking-widest">
+                        <i class="fa-solid fa-laptop-code"></i> Live Interactive Portfolio
+                    </div>
+                    <h2 class="font-heading font-black text-3xl sm:text-5xl text-white">
+                        Demo Projects & <span class="text-gradient-gold">Prototypes</span>
+                    </h2>
+                    <p class="max-w-2xl mx-auto text-gray-400 text-sm sm:text-base">
+                        Filter by category and click <span class="text-electric font-semibold">"View Demo"</span> to launch interactive project previews.
+                    </p>
+                </div>
+
+                <!-- Category Filter Tabs -->
+                <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+                    <button onclick="filterPortfolio('all')" class="filter-btn active-tab px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all glass-card border-white/10 text-white" data-category="all">
+                        <i class="fa-solid fa-border-all mr-1.5"></i> All Categories
+                    </button>
+                    <button onclick="filterPortfolio('app')" class="filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all glass-card border-white/10 text-gray-400 hover:text-white" data-category="app">
+                        <i class="fa-solid fa-mobile-screen mr-1.5 text-electric"></i> Mobile App
+                    </button>
+                    <button onclick="filterPortfolio('web')" class="filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all glass-card border-white/10 text-gray-400 hover:text-white" data-category="web">
+                        <i class="fa-solid fa-globe mr-1.5 text-gold"></i> Website Dev
+                    </button>
+                    <button onclick="filterPortfolio('design')" class="filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all glass-card border-white/10 text-gray-400 hover:text-white" data-category="design">
+                        <i class="fa-solid fa-palette mr-1.5 text-gold"></i> Graphic Design
+                    </button>
+                    <button onclick="filterPortfolio('ai')" class="filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all glass-card border-white/10 text-gray-400 hover:text-white" data-category="ai">
+                        <i class="fa-solid fa-robot mr-1.5 text-electric"></i> AI & Python
+                    </button>
+                </div>
+
+                <!-- Portfolio Grid -->
+                <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Item 1: Web - Analytics SaaS -->
+                    <div class="portfolio-item glass-card rounded-2xl overflow-hidden border border-white/10 hover:border-electric transition-all group flex flex-col justify-between" data-category="web">
+                        <div>
+                            <div class="relative h-48 overflow-hidden bg-navy-800 flex items-center justify-center">
+                                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 to-transparent z-10"></div>
+                                <div class="w-full h-full p-4 flex flex-col justify-center items-center text-electric group-hover:scale-105 transition-transform">
+                                    <i class="fa-solid fa-chart-line text-6xl"></i>
+                                    <span class="mt-2 font-mono text-xs text-gray-400">Live Web App Prototype</span>
+                                </div>
+                                <span class="absolute top-3 left-3 z-20 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-gold text-navy-950">
+                                    Website Dev
+                                </span>
+                            </div>
+                            <div class="p-6 space-y-3">
+                                <h3 class="text-xl font-bold text-white font-heading">Apex Analytics Web Platform</h3>
+                                <p class="text-xs text-gray-300 leading-relaxed">
+                                    Interactive dashboard web application demonstrating real-time chart updates and stats tracking.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="openDemoModal('web-dashboard')" class="w-full py-3 rounded-xl font-bold text-xs uppercase tracking-wider bg-gradient-electric-btn text-navy-950 hover:shadow-lg hover:shadow-electric/30 transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-play"></i> View Demo
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: App - Fitness Tracker -->
+                    <div class="portfolio-item glass-card rounded-2xl overflow-hidden border border-white/10 hover:border-gold transition-all group flex flex-col justify-between" data-category="app">
+                        <div>
+                            <div class="relative h-48 overflow-hidden bg-navy-800 flex items-center justify-center">
+                                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 to-transparent z-10"></div>
+                                <div class="w-full h-full p-4 flex flex-col justify-center items-center text-gold group-hover:scale-105 transition-transform">
+                                    <i class="fa-solid fa-heart-pulse text-6xl"></i>
+                                    <span class="mt-2 font-mono text-xs text-gray-400">Mobile App UI Frame</span>
+                                </div>
+                                <span class="absolute top-3 left-3 z-20 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-electric text-navy-950">
+                                    Mobile App
+                                </span>
+                            </div>
+                            <div class="p-6 space-y-3">
+                                <h3 class="text-xl font-bold text-white font-heading">PulseFit Mobile App</h3>
+                                <p class="text-xs text-gray-300 leading-relaxed">
+                                    Cross-platform fitness app prototype featuring interactive step simulation and workout logs.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="openDemoModal('app-fitness')" class="w-full py-3 rounded-xl font-bold text-xs uppercase tracking-wider bg-gradient-gold-btn text-navy-950 hover:shadow-lg hover:shadow-gold/30 transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-mobile-screen"></i> View Demo
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: AI - Python Runner -->
+                    <div class="portfolio-item glass-card rounded-2xl overflow-hidden border border-white/10 hover:border-electric transition-all group flex flex-col justify-between" data-category="ai">
+                        <div>
+                            <div class="relative h-48 overflow-hidden bg-navy-800 flex items-center justify-center">
+                                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 to-transparent z-10"></div>
+                                <div class="w-full h-full p-4 flex flex-col justify-center items-center text-electric group-hover:scale-105 transition-transform">
+                                    <i class="fa-solid fa-terminal text-6xl"></i>
+                                    <span class="mt-2 font-mono text-xs text-gray-400">Python Console Simulator</span>
+                                </div>
+                                <span class="absolute top-3 left-3 z-20 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-gold text-navy-950">
+                                    AI & Python
+                                </span>
+                            </div>
+                            <div class="p-6 space-y-3">
+                                <h3 class="text-xl font-bold text-white font-heading">Nexus AI & Python Agent</h3>
+                                <p class="text-xs text-gray-300 leading-relaxed">
+                                    Terminal simulator showing automated web scraping scripts and LLM prompt execution.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="openDemoModal('ai-terminal')" class="w-full py-3 rounded-xl font-bold text-xs uppercase tracking-wider bg-gradient-electric-btn text-navy-950 hover:shadow-lg hover:shadow-electric/30 transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-code"></i> View Demo
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: Graphic Design -->
+                    <div class="portfolio-item glass-card rounded-2xl overflow-hidden border border-white/10 hover:border-gold transition-all group flex flex-col justify-between" data-category="design">
+                        <div>
+                            <div class="relative h-48 overflow-hidden bg-navy-800 flex items-center justify-center">
+                                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 to-transparent z-10"></div>
+                                <div class="w-full h-full p-4 flex flex-col justify-center items-center text-gold group-hover:scale-105 transition-transform">
+                                    <i class="fa-solid fa-wand-magic-sparkles text-6xl"></i>
+                                    <span class="mt-2 font-mono text-xs text-gray-400">Graphic Asset Gallery</span>
+                                </div>
+                                <span class="absolute top-3 left-3 z-20 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-gold text-navy-950">
+                                    Graphic Design
+                                </span>
+                            </div>
+                            <div class="p-6 space-y-3">
+                                <h3 class="text-xl font-bold text-white font-heading">Luxuria Brand Asset Suite</h3>
+                                <p class="text-xs text-gray-300 leading-relaxed">
+                                    Visual showcase featuring logo mark concepts, typography palettes, and banner templates.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="openDemoModal('design-gallery')" class="w-full py-3 rounded-xl font-bold text-xs uppercase tracking-wider bg-gradient-gold-btn text-navy-950 hover:shadow-lg hover:shadow-gold/30 transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-image"></i> View Demo
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Item 5: Web - E-Commerce -->
+                    <div class="portfolio-item glass-card rounded-2xl overflow-hidden border border-white/10 hover:border-electric transition-all group flex flex-col justify-between" data-category="web">
+                        <div>
+                            <div class="relative h-48 overflow-hidden bg-navy-800 flex items-center justify-center">
+                                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 to-transparent z-10"></div>
+                                <div class="w-full h-full p-4 flex flex-col justify-center items-center text-electric group-hover:scale-105 transition-transform">
+                                    <i class="fa-solid fa-laptop-code text-6xl"></i>
+                                    <span class="mt-2 font-mono text-xs text-gray-400">Enterprise Web Portal</span>
+                                </div>
+                                <span class="absolute top-3 left-3 z-20 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-gold text-navy-950">
+                                    Website Dev
+                                </span>
+                            </div>
+                            <div class="p-6 space-y-3">
+                                <h3 class="text-xl font-bold text-white font-heading">Corporate Web Portal Prototype</h3>
+                                <p class="text-xs text-gray-300 leading-relaxed">
+                                    Modern agency & corporate portal framework with dynamic content sections and contact integration.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="openDemoModal('web-store')" class="w-full py-3 rounded-xl font-bold text-xs uppercase tracking-wider bg-gradient-electric-btn text-navy-950 hover:shadow-lg hover:shadow-electric/30 transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-desktop"></i> View Demo
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Item 6: AI - Sentiment Analysis -->
+                    <div class="portfolio-item glass-card rounded-2xl overflow-hidden border border-white/10 hover:border-gold transition-all group flex flex-col justify-between" data-category="ai">
+                        <div>
+                            <div class="relative h-48 overflow-hidden bg-navy-800 flex items-center justify-center">
+                                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 to-transparent z-10"></div>
+                                <div class="w-full h-full p-4 flex flex-col justify-center items-center text-gold group-hover:scale-105 transition-transform">
+                                    <i class="fa-solid fa-microchip text-6xl"></i>
+                                    <span class="mt-2 font-mono text-xs text-gray-400">Text Sentiment Engine</span>
+                                </div>
+                                <span class="absolute top-3 left-3 z-20 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-electric text-navy-950">
+                                    AI & Python
+                                </span>
+                            </div>
+                            <div class="p-6 space-y-3">
+                                <h3 class="text-xl font-bold text-white font-heading">SentimentAI Python Tool</h3>
+                                <p class="text-xs text-gray-300 leading-relaxed">
+                                    Interactive text evaluation widget that analyzes message sentiment in real time.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="openDemoModal('ai-sentiment')" class="w-full py-3 rounded-xl font-bold text-xs uppercase tracking-wider bg-gradient-gold-btn text-navy-950 hover:shadow-lg hover:shadow-gold/30 transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-brain"></i> View Demo
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. CONTACT SECTION -->
+        <section id="contact" class="py-24 px-4 sm:px-8 relative">
+            <div class="max-w-7xl mx-auto space-y-12">
+                
+                <!-- Header -->
+                <div class="text-center space-y-4">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md glass-card-gold text-gold text-xs font-bold uppercase tracking-widest">
+                        <i class="fa-solid fa-paper-plane"></i> Let's Talk
+                    </div>
+                    <h2 class="font-heading font-black text-3xl sm:text-5xl text-white">
+                        Get In Touch <span class="text-gradient-electric">With Us</span>
+                    </h2>
+                    <p class="max-w-2xl mx-auto text-gray-400 text-sm sm:text-base">
+                        Ready to start your project? Contact Misbah Imran Digital Studio directly via WhatsApp or Email.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    
+                    <!-- Left: Direct Contact Info & Working Action Links -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="glass-card rounded-3xl p-8 space-y-6 border border-white/10">
+                            <h3 class="text-2xl font-bold text-white font-heading">Contact Details</h3>
+                            <p class="text-sm text-gray-300">
+                                Reach out directly for project inquiries, quotes, or discussions.
+                            </p>
+
+                            <div class="space-y-5 pt-2">
+                                <!-- Clickable Email Card -->
+                                <a href="mailto:Misbahimrandigitalstudio@gmail.com" class="flex items-center gap-4 p-3 rounded-2xl bg-white/5 border border-white/10 hover:border-electric transition-all group">
+                                    <div class="w-12 h-12 rounded-2xl bg-electric/10 border border-electric/30 flex items-center justify-center text-electric text-xl group-hover:bg-electric group-hover:text-navy-950 transition-all">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                    <div class="overflow-hidden">
+                                        <p class="text-xs text-gray-400">Business Email</p>
+                                        <p class="text-xs sm:text-sm font-semibold text-white truncate group-hover:text-electric transition-colors">Misbahimrandigitalstudio@gmail.com</p>
+                                    </div>
+                                </a>
+
+                                <!-- Clickable WhatsApp Card -->
+                                <a href="https://wa.me/923042432876" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-3 rounded-2xl bg-white/5 border border-white/10 hover:border-gold transition-all group">
+                                    <div class="w-12 h-12 rounded-2xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold text-xl group-hover:bg-gold group-hover:text-navy-950 transition-all">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-gray-400">WhatsApp / Phone</p>
+                                        <p class="text-xs sm:text-sm font-semibold text-white group-hover:text-gold transition-colors">+92 304 2432876</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- Fast Action Direct Buttons -->
+                            <div class="pt-6 border-t border-white/10 flex flex-col sm:flex-row gap-3">
+                                <a href="https://wa.me/923042432876" target="_blank" rel="noopener noreferrer" class="flex-1 py-3 px-4 rounded-xl text-xs font-bold bg-green-600 hover:bg-green-500 text-white flex items-center justify-center gap-2 transition-all shadow-lg shadow-green-900/30">
+                                    <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp Us
+                                </a>
+                                <a href="mailto:Misbahimrandigitalstudio@gmail.com" class="flex-1 py-3 px-4 rounded-xl text-xs font-bold bg-gradient-electric-btn text-navy-950 flex items-center justify-center gap-2 transition-all hover:shadow-lg hover:shadow-electric/30">
+                                    <i class="fa-solid fa-paper-plane text-base"></i> Send Email
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Contact Form -->
+                    <div class="lg:col-span-7 glass-card-gold rounded-3xl p-8 border border-gold/20 shadow-2xl">
+                        <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label for="contact-name" class="text-xs font-semibold uppercase tracking-wider text-gray-300">Your Name</label>
+                                    <input type="text" id="contact-name" required placeholder="Enter your full name" class="w-full bg-navy-950/80 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold transition-colors">
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="contact-email" class="text-xs font-semibold uppercase tracking-wider text-gray-300">Email Address</label>
+                                    <input type="email" id="contact-email" required placeholder="name@domain.com" class="w-full bg-navy-950/80 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold transition-colors">
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label for="contact-service" class="text-xs font-semibold uppercase tracking-wider text-gray-300">Service Required</label>
+                                <select id="contact-service" required class="w-full bg-navy-950/80 border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-200 focus:outline-none focus:border-gold transition-colors">
+                                    <option value="" disabled selected>Select a service...</option>
+                                    <option value="Mobile App Development">Mobile App Development</option>
+                                    <option value="Website Development">Website Development</option>
+                                    <option value="Graphic Designing">Graphic Designing</option>
+                                    <option value="AI & Python Development">AI & Python Development</option>
+                                </select>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label for="contact-message" class="text-xs font-semibold uppercase tracking-wider text-gray-300">Project Details</label>
+                                <textarea id="contact-message" rows="4" required placeholder="Describe what you want to build..." class="w-full bg-navy-950/80 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold transition-colors resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-xl font-bold text-sm uppercase tracking-wider bg-gradient-gold-btn text-navy-950 hover:shadow-xl hover:shadow-gold/30 hover:scale-[1.01] transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-950 border-t border-white/10 py-12 px-4 sm:px-8 relative z-10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            
+            <!-- Logo & Title -->
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-gold/20 border border-gold/40 flex items-center justify-center font-bold text-gold text-xs">
+                    MI
+                </div>
+                <div>
+                    <span class="font-heading font-bold text-white text-base">Misbah Imran Digital Studio</span>
+                    <p class="text-xs text-electric">Your Digital Partner</p>
+                </div>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-gray-400">
+                <a href="mailto:Misbahimrandigitalstudio@gmail.com" class="hover:text-gold transition-colors"><i class="fa-solid fa-envelope mr-1"></i> Email Us</a>
+                <a href="https://wa.me/923042432876" target="_blank" rel="noopener noreferrer" class="hover:text-green-400 transition-colors"><i class="fa-brands fa-whatsapp mr-1"></i> WhatsApp</a>
+            </div>
+
+            <!-- Copyright -->
+            <p class="text-xs text-gray-500 text-center md:text-right">
+                &copy; <span id="year"></span> Misbah Imran Digital Studio. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- BACK-TO-TOP BUTTON -->
+    <button id="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})" class="fixed bottom-6 right-6 z-30 w-12 h-12 rounded-full glass-card-electric text-electric hover:bg-electric hover:text-navy-950 shadow-2xl flex items-center justify-center transition-all opacity-0 pointer-events-none">
+        <i class="fa-solid fa-arrow-up text-lg"></i>
+    </button>
+
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div id="toast" class="fixed bottom-6 left-6 z-50 glass-card-gold px-6 py-4 rounded-2xl text-white text-sm shadow-2xl transition-all translate-y-24 opacity-0 flex items-center gap-3">
+        <i class="fa-solid fa-circle-check text-gold text-xl"></i>
+        <span id="toast-msg">Action completed!</span>
+    </div>
+
+    <!-- INTERACTIVE DEMO MODAL CONTAINER -->
+    <div id="demo-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+        <div class="glass-card w-full max-w-4xl rounded-3xl border border-white/20 shadow-2xl overflow-hidden flex flex-col my-auto max-h-[90vh]">
+            
+            <!-- Modal Header -->
+            <div class="px-6 py-4 border-b border-white/10 flex items-center justify-between bg-navy-900/80">
+                <div class="flex items-center gap-3">
+                    <span id="modal-badge" class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-electric text-navy-950">
+                        Interactive Demo
+                    </span>
+                    <h3 id="modal-title" class="font-heading font-bold text-lg text-white">
+                        Project Showcase Demo
+                    </h3>
+                </div>
+                <button onclick="closeDemoModal()" class="text-gray-400 hover:text-white text-xl w-8 h-8 rounded-full flex items-center justify-center bg-white/5 hover:bg-white/20 transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content Body -->
+            <div id="modal-body" class="p-6 overflow-y-auto custom-scrollbar flex-1 space-y-6">
+                <!-- Populated via JavaScript -->
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="px-6 py-4 border-t border-white/10 bg-navy-900/80 flex items-center justify-between">
+                <span class="text-xs text-gray-400">Misbah Imran Digital Studio Preview Sandbox</span>
+                <button onclick="closeDemoModal()" class="px-5 py-2 rounded-xl text-xs font-semibold bg-white/10 hover:bg-white/20 text-white transition-colors">
+                    Close Preview
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT CODE -->
+    <script>
+        // Set dynamic copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Navbar Scroll Handler & Back to top button visibility
+        const navbar = document.getElementById('navbar');
+        const backToTopBtn = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                navbar.classList.add('py-2');
+                navbar.classList.remove('py-4');
+                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                backToTopBtn.classList.add('opacity-100', 'pointer-events-auto');
+            } else {
+                navbar.classList.add('py-4');
+                navbar.classList.remove('py-2');
+                backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
+            }
+        });
+
+        // Mobile Drawer Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Form Submit Handler
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('contact-name').value;
+            const email = document.getElementById('contact-email').value;
+            const service = document.getElementById('contact-service').value;
+            const msg = document.getElementById('contact-message').value;
+
+            const textMsg = `Hello Misbah Imran Digital Studio,\n\nName: ${name}\nEmail: ${email}\nService: ${service}\nMessage: ${msg}`;
+            
+            showToast(`Redirecting your request to WhatsApp...`);
+            
+            setTimeout(() => {
+                window.open(`https://wa.me/923042432876?text=${encodeURIComponent(textMsg)}`, '_blank');
+            }, 800);
+
+            e.target.reset();
+        }
+
+        // Portfolio Filter Functionality
+        function filterPortfolio(category) {
+            const items = document.querySelectorAll('.portfolio-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-category') === category) {
+                    btn.classList.add('active-tab', 'text-white', 'border-gold');
+                    btn.classList.remove('text-gray-400');
+                } else {
+                    btn.classList.remove('active-tab', 'text-white', 'border-gold');
+                    btn.classList.add('text-gray-400');
+                }
+            });
+
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function filterAndScrollPortfolio(category) {
+            filterPortfolio(category);
+            const portfolioSection = document.getElementById('portfolio');
+            portfolioSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Toast Helper
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-msg');
+            toastMsg.textContent = message;
+
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 3500);
+        }
+
+        // INTERACTIVE DEMO MODAL BUILDER
+        function openDemoModal(demoType) {
+            const modal = document.getElementById('demo-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalBadge = document.getElementById('modal-badge');
+            const modalBody = document.getElementById('modal-body');
+
+            modalBody.innerHTML = '';
+
+            if (demoType === 'web-dashboard') {
+                modalBadge.textContent = 'Website Development Demo';
+                modalTitle.textContent = 'Apex Analytics Web Dashboard';
+
+                modalBody.innerHTML = `
+                    <div class="space-y-6">
+                        <div class="glass-card p-4 rounded-xl flex items-center justify-between border border-white/10">
+                            <div class="flex items-center gap-3">
+                                <div class="w-3 h-3 rounded-full bg-electric"></div>
+                                <span class="font-bold text-white text-sm">Apex Dashboard Frame</span>
+                            </div>
+                            <button onclick="updateDashboardMetric(12)" class="px-3 py-1 rounded bg-electric/20 text-electric text-xs font-semibold hover:bg-electric hover:text-navy-950 transition-colors">
+                                Simulate Traffic Spike
+                            </button>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div class="glass-card p-4 rounded-xl border border-white/5">
+                                <p class="text-xs text-gray-400">Total Visits</p>
+                                <p id="metric-users" class="text-2xl font-bold text-white font-mono mt-1">12,450</p>
+                                <span class="text-[10px] text-green-400"><i class="fa-solid fa-arrow-up"></i> Live Tracking</span>
+                            </div>
+                            <div class="glass-card p-4 rounded-xl border border-white/5">
+                                <p class="text-xs text-gray-400">Weekly Orders</p>
+                                <p class="text-2xl font-bold text-gold font-mono mt-1">420</p>
+                                <span class="text-[10px] text-gold">Active Session</span>
+                            </div>
+                            <div class="glass-card p-4 rounded-xl border border-white/5">
+                                <p class="text-xs text-gray-400">Response Speed</p>
+                                <p class="text-2xl font-bold text-electric font-mono mt-1">12 ms</p>
+                                <span class="text-[10px] text-electric">Fast load speed</span>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-6 rounded-xl border border-white/10 space-y-4">
+                            <h4 class="text-sm font-bold text-white">Traffic Stats</h4>
+                            <div class="space-y-3">
+                                <div>
+                                    <div class="flex justify-between text-xs text-gray-400 mb-1">
+                                        <span>Organic Search</span>
+                                        <span id="bar1-val">65%</span>
+                                    </div>
+                                    <div class="w-full h-3 bg-navy-950 rounded-full overflow-hidden">
+                                        <div id="bar1" class="h-full bg-electric transition-all duration-500" style="width: 65%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (demoType === 'app-fitness') {
+                modalBadge.textContent = 'Mobile App Development Demo';
+                modalTitle.textContent = 'PulseFit Mobile App Simulator';
+
+                modalBody.innerHTML = `
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-8">
+                        <div class="w-72 h-[460px] bg-navy-950 rounded-[36px] border-4 border-gray-700 p-4 shadow-2xl flex flex-col justify-between relative overflow-hidden">
+                            <div class="w-28 h-4 bg-gray-800 mx-auto rounded-b-xl mb-2"></div>
+                            
+                            <div class="space-y-4 text-center">
+                                <p class="text-xs font-bold text-gold uppercase tracking-wider">Mobile UI Tracker</p>
+                                
+                                <div class="relative w-36 h-36 mx-auto rounded-full border-4 border-electric flex flex-col items-center justify-center shadow-lg shadow-electric/20">
+                                    <span id="app-steps" class="text-2xl font-extrabold text-white">6,200</span>
+                                    <span class="text-[10px] text-gray-400">Steps Logged</span>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-2 text-left">
+                                    <div class="bg-navy-900 p-2.5 rounded-xl border border-white/5">
+                                        <p class="text-[10px] text-gray-400">Calories</p>
+                                        <p id="app-kcal" class="text-sm font-bold text-gold">310 kcal</p>
+                                    </div>
+                                    <div class="bg-navy-900 p-2.5 rounded-xl border border-white/5">
+                                        <p class="text-[10px] text-gray-400">Time</p>
+                                        <p class="text-sm font-bold text-electric">35 mins</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2 pt-2">
+                                <button onclick="simStep()" class="w-full py-2.5 rounded-xl font-bold text-xs bg-gradient-electric-btn text-navy-950 shadow">
+                                    <i class="fa-solid fa-person-walking"></i> Add 500 Steps
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="max-w-xs space-y-4 text-center sm:text-left">
+                            <h4 class="text-lg font-bold text-white font-heading">Cross-Platform App UI</h4>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                Clean, touch-optimized user interfaces engineered for seamless operation on mobile devices.
+                            </p>
+                        </div>
+                    </div>
+                `;
+            } else if (demoType === 'ai-terminal') {
+                modalBadge.textContent = 'AI & Python Development Demo';
+                modalTitle.textContent = 'Nexus Python Script Simulator';
+
+                modalBody.innerHTML = `
+                    <div class="space-y-4">
+                        <div class="bg-navy-950 rounded-2xl p-4 font-mono text-xs border border-white/10 space-y-3">
+                            <div class="flex items-center justify-between border-b border-white/10 pb-2 text-gray-400">
+                                <span><i class="fa-solid fa-terminal text-gold mr-2"></i>python3 nexus_script.py</span>
+                                <span class="text-[10px] text-electric">v3.12</span>
+                            </div>
+                            
+                            <div id="terminal-out" class="h-48 overflow-y-auto space-y-2 text-gray-300 custom-scrollbar">
+                                <p class="text-green-400">[SYSTEM]: Python Environment Initialized.</p>
+                                <p class="text-gray-400">[READY]: Select a script action below to trigger the process.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2">
+                            <button onclick="runPythonTask('scrape')" class="px-4 py-2 rounded-xl text-xs font-semibold bg-electric/20 border border-electric/40 text-electric hover:bg-electric hover:text-navy-950 transition-all">
+                                <i class="fa-solid fa-spider"></i> Test Web Scraper
+                            </button>
+                            <button onclick="runPythonTask('ai')" class="px-4 py-2 rounded-xl text-xs font-semibold bg-gold/20 border border-gold/40 text-gold hover:bg-gold hover:text-navy-950 transition-all">
+                                <i class="fa-solid fa-brain"></i> Test AI API Call
+                            </button>
+                            <button onclick="clearTerminal()" class="px-4 py-2 rounded-xl text-xs font-semibold bg-white/5 text-gray-400 hover:text-white transition-all">
+                                Clear Terminal
+                            </button>
+                        </div>
+                    </div>
+                `;
+            } else if (demoType === 'design-gallery') {
+                modalBadge.textContent = 'Graphic Design Demo';
+                modalTitle.textContent = 'Luxuria Visual Identity Showcase';
+
+                modalBody.innerHTML = `
+                    <div class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="glass-card p-6 rounded-2xl border border-gold/30 text-center space-y-3">
+                                <div class="w-16 h-16 mx-auto rounded-full bg-gradient-gold-btn flex items-center justify-center text-navy-950 text-2xl font-black font-heading shadow-lg shadow-gold/20">
+                                    LX
+                                </div>
+                                <h4 class="text-white font-bold text-base font-heading">Monogram Logo Mark</h4>
+                                <p class="text-xs text-gray-400">Vector brand identity mark designed for client branding.</p>
+                            </div>
+
+                            <div class="glass-card p-6 rounded-2xl border border-electric/30 text-center space-y-3">
+                                <div class="w-16 h-16 mx-auto rounded-2xl bg-navy-800 border border-electric flex items-center justify-center text-electric text-2xl font-bold">
+                                    <i class="fa-solid fa-swatchbook"></i>
+                                </div>
+                                <h4 class="text-white font-bold text-base font-heading">Palette & Style Guide</h4>
+                                <p class="text-xs text-gray-400">Cohesive brand colors and typography setup.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-2xl glass-card border border-white/10 text-center">
+                            <p class="text-xs text-gold font-semibold uppercase tracking-wider mb-2">Social Graphic Banner Concept</p>
+                            <div class="w-full h-28 rounded-xl bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 border border-white/10 flex items-center justify-center text-white font-heading font-extrabold text-base sm:text-lg px-4">
+                                "Misbah Imran Digital Studio - Your Digital Partner"
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (demoType === 'web-store') {
+                modalBadge.textContent = 'Website Development Demo';
+                modalTitle.textContent = 'Corporate Digital Service Platform';
+
+                modalBody.innerHTML = `
+                    <div class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="glass-card p-4 rounded-2xl border border-white/10 flex flex-col justify-between space-y-3">
+                                <div>
+                                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-electric/20 text-electric border border-electric/30">Custom Development</span>
+                                    <p class="font-bold text-white text-sm mt-2">Custom Website Package</p>
+                                    <p class="text-xs text-gray-400 mt-1">Responsive HTML5, Tailwind CSS, React & fast loading speeds.</p>
+                                </div>
+                                <div class="flex items-center justify-between border-t border-white/10 pt-3">
+                                    <span class="text-xs font-semibold text-gold">Contact for Pricing</span>
+                                    <a href="#contact" onclick="closeDemoModal()" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-gradient-electric-btn text-navy-950">Inquire Now</a>
+                                </div>
+                            </div>
+
+                            <div class="glass-card p-4 rounded-2xl border border-white/10 flex flex-col justify-between space-y-3">
+                                <div>
+                                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-gold/20 text-gold border border-gold/30">Full Stack Web</span>
+                                    <p class="font-bold text-white text-sm mt-2">Enterprise Web App Solution</p>
+                                    <p class="text-xs text-gray-400 mt-1">Full-stack web applications with secure backends & database integration.</p>
+                                </div>
+                                <div class="flex items-center justify-between border-t border-white/10 pt-3">
+                                    <span class="text-xs font-semibold text-gold">Contact for Pricing</span>
+                                    <a href="#contact" onclick="closeDemoModal()" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-gradient-gold-btn text-navy-950">Inquire Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card-gold p-4 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-handshake text-gold text-xl"></i>
+                                <div>
+                                    <p class="text-xs font-bold text-white">Need a custom quote for your project?</p>
+                                    <p class="text-[11px] text-gray-300">We offer tailor-made solutions for all four service categories.</p>
+                                </div>
+                            </div>
+                            <a href="https://wa.me/923042432876" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl text-xs font-bold bg-green-600 hover:bg-green-500 text-white flex items-center gap-2 whitespace-nowrap">
+                                <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                `;
+            } else if (demoType === 'ai-sentiment') {
+                modalBadge.textContent = 'AI & Python Development Demo';
+                modalTitle.textContent = 'Sentiment AI Text Analysis Tool';
+
+                modalBody.innerHTML = `
+                    <div class="space-y-4">
+                        <p class="text-xs text-gray-300">Enter text below to test the sentiment analysis script:</p>
+                        <textarea id="sentiment-input" rows="3" class="w-full bg-navy-950 border border-white/10 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-electric" placeholder="e.g. Misbah Imran Digital Studio built a fantastic web application for us!"></textarea>
+                        
+                        <button onclick="analyzeSentiment()" class="w-full py-3 rounded-xl font-bold text-xs uppercase bg-gradient-gold-btn text-navy-950">Analyze Sentiment</button>
+
+                        <div id="sentiment-result" class="hidden glass-card p-4 rounded-xl border border-white/10 text-center">
+                            <p class="text-xs text-gray-400">Result:</p>
+                            <p id="sentiment-tag" class="text-lg font-bold text-green-400 mt-1">POSITIVE</p>
+                        </div>
+                    </div>
+                `;
+            }
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDemoModal() {
+            const modal = document.getElementById('demo-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Demo Helper Handlers
+        function updateDashboardMetric(amount) {
+            const users = document.getElementById('metric-users');
+            const b1 = document.getElementById('bar1');
+            const b1v = document.getElementById('bar1-val');
+            
+            if (users) {
+                let cur = parseInt(users.textContent.replace(',', ''));
+                users.textContent = (cur + amount * 100).toLocaleString();
+                b1.style.width = '85%';
+                b1v.textContent = '85%';
+                showToast('Traffic updated!');
+            }
+        }
+
+        function simStep() {
+            const stepsEl = document.getElementById('app-steps');
+            const kcalEl = document.getElementById('app-kcal');
+            if (stepsEl) {
+                let cur = parseInt(stepsEl.textContent.replace(',', ''));
+                let newSteps = cur + 500;
+                stepsEl.textContent = newSteps.toLocaleString();
+                kcalEl.textContent = Math.round(newSteps * 0.05) + ' kcal';
+            }
+        }
+
+        function runPythonTask(type) {
+            const out = document.getElementById('terminal-out');
+            if (!out) return;
+
+            if (type === 'scrape') {
+                out.innerHTML += `<p class="text-electric">[RUN]: BeautifulSoup script starting...</p>`;
+                setTimeout(() => {
+                    out.innerHTML += `<p class="text-gray-300">[DONE]: Successfully retrieved page titles and metadata.</p>`;
+                    out.scrollTop = out.scrollHeight;
+                }, 600);
+            } else if (type === 'ai') {
+                out.innerHTML += `<p class="text-gold">[RUN]: Request sent to AI model endpoint...</p>`;
+                setTimeout(() => {
+                    out.innerHTML += `<p class="text-gray-300">[AI RESPONSE]: "Project payload generated successfully."</p>`;
+                    out.scrollTop = out.scrollHeight;
+                }, 800);
+            }
+        }
+
+        function clearTerminal() {
+            const out = document.getElementById('terminal-out');
+            if (out) out.innerHTML = `<p class="text-green-400">[SYSTEM]: Console reset.</p>`;
+        }
+
+        let currentCartTotal = 0;
+        function addToCart(price) {
+            currentCartTotal += price;
+            const totalEl = document.getElementById('cart-total');
+            if (totalEl) totalEl.textContent = '$' + currentCartTotal.toFixed(2);
+            showToast('Item added to demo cart!');
+        }
+
+        function analyzeSentiment() {
+            const txt = document.getElementById('sentiment-input').value;
+            const res = document.getElementById('sentiment-result');
+            const tag = document.getElementById('sentiment-tag');
+
+            if (!txt.trim()) return;
+
+            res.classList.remove('hidden');
+            if (txt.toLowerCase().includes('bad') || txt.toLowerCase().includes('slow') || txt.toLowerCase().includes('poor')) {
+                tag.textContent = 'NEGATIVE SENTIMENT';
+                tag.className = 'text-lg font-bold text-red-400 mt-1';
+            } else {
+                tag.textContent = 'POSITIVE SENTIMENT';
+                tag.className = 'text-lg font-bold text-green-400 mt-1';
+            }
+        }
+    </script>
+</body>
+</html>
